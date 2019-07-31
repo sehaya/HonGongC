@@ -1,4 +1,4 @@
-/***** <혼자 공부하는 C 언어> 120쪽 도전 실전 예제
+/***** <혼자 공부하는 C 언어> 4장 연산자 120쪽 도전 실전 예제
 
 체중관리 프로그램
 
@@ -27,7 +27,6 @@ int main(void)
         scanf("%f",&weight);
 
         bmi =  weight / (height*height);
-
 
 	printf("키는 %.1fcm, 몸무게는 %.1fkg, bmi 지수는 %.1f입니다.\n", height*100, weight, bmi);
         printf("%s",((bmi>=20)&&(bmi<25)) ? good : health);
