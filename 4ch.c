@@ -30,7 +30,7 @@ int main(void)
 
 
 	printf("키는 %.1fcm, 몸무게는 %.1fkg, bmi 지수는 %.1f입니다.\n", height*100, weight, bmi);
-        printf("%s",((bmi>20)&&(bmi<=25)) ? good : health);
+        printf("%s",((bmi>=20)&&(bmi<25)) ? good : health);
 
         return 0;
 }
