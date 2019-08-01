@@ -17,7 +17,8 @@
 int main(void)
 {
 	int i, j, input, result, count;
-
+	count = 0;
+	
 	printf("%s", "2 이상의 정수를 입력하세요. :");
 	scanf("%d", &input);
 
