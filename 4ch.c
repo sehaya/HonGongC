@@ -16,11 +16,28 @@ int main(void)
 {
         float height, weight, bmi;
 
+	/*** char good[40] 대신에 char* good 으로 선언하였으면 어땠을까 합니다. 
+	( 이것의 차이에 대해서는 숙제로 조사하시면 공부가 될 듯 합니다. ) 
+	또한 const keyword에 대해 배우셨다면 const char* const 로 선언해주시면 더 좋을 듯 합니다.
+	by neogeo ***/
 	char good[40] = "표준입니다.";
         char health[40] = "체중관리가 필요합니다.";
+	
+	
 
         printf("키(cm)를 입력하세요 :");
         scanf("%f", &height);
+	/*** 
+	while ( height == 0 )
+	float, double 은 0과 직접 비교하면 문제를 일으킬 수 있습니다.
+	https://stackoverflow.com/questions/19837576/comparing-floating-point-number-to-zero 
+	이건 굉장히 어려운 IEE754스펙을 알아야 이해가 가능
+	by neogeo ***/
+	while ( height <= 0.000001f && height >= -0.0000001f )
+	{
+		printf("키는 0보다 큰 숫자여야 합니다. 다시 입력하세요. :");
+		scanf("%f", &height);
+	}
 	height = height*0.01;
 
         printf("몸무게(kg)를 입력하세요 :");
@@ -29,7 +46,7 @@ int main(void)
         bmi =  weight / (height*height);
 
 	printf("키는 %.1fcm, 몸무게는 %.1fkg, bmi 지수는 %.1f입니다.\n", height*100, weight, bmi);
-        printf("%s",((bmi>=20)&&(bmi<25)) ? good : health);
+        printf("%s\n",((bmi>=20)&&(bmi<25)) ? good : health);
 
         return 0;
 }
