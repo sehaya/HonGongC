@@ -20,6 +20,11 @@ int main(void)
 		result = input_A * input_B;
 	} else if (operator=='/')
 	{
+		while ( input_B <= 0.000001f && input_B >= -0.0000001f )
+                {
+                        printf("0으로 나눌 수 없습니다. 나눌 숫자를 다시 입력하세요.\n");
+                        scanf("%lf",&input_B);
+                }
 		result = input_A / input_B;
 	} else if (operator=='+')
 	{
