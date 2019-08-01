@@ -14,11 +14,11 @@ int main(void)
 	int i = 0, count = 0;
 
 	printf("영어 문장을 입력하세요. :");
-	gets(sentence);
+	fgets(sentence, sizeof(sentence), sdtin);
 
 	while (sentence[i] != '\0')
 	{
-		if (('A' <= sentence[i])&&(sentence[i] < 'a'))
+		if (('A' <= sentence[i])&&(sentence[i] <= 'Z'))
 		{
 			sentence[i] = sentence[i] + 32;
 			count = count + 1;
