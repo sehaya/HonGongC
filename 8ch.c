@@ -14,7 +14,8 @@ int main(void)
 	int i, count = 0;
 
 	printf("영어 문장을 입력하세요. :");
-	gets(sentence);
+	//gets(sentence);
+	fgets(sentence, sizeof(sentence), stdin);
 
 	for (i = 0; i < 80; i++)
 	{
@@ -22,7 +23,7 @@ int main(void)
 		{
 			break;
 		}
-		else if (('A' <= sentence[i])&&(sentence[i] < 'a'))
+		else if (('A' <= sentence[i])&&(sentence[i] <= 'Z'))
 		{
 			sentence[i] = sentence[i] + 32;
 			count = count + 1;
