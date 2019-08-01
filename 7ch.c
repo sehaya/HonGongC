@@ -33,7 +33,12 @@ int sum_func(int count)
 	if (count == 0)
 	{
 		return sum;
-	} else
+	} else if (count < 0)
+        {
+                sum = sum + count;
+                count = count + 1;
+                sum_func(count);
+        } else
 	{
 		sum = sum + count;
 		count = count - 1;
