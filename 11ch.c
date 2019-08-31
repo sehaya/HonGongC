@@ -10,8 +10,6 @@
 
 #include <stdio.h>
 
-int count_char(cnt);
-
 int main(void)
 {
 	int cnt = 0; 
